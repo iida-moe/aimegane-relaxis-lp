@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relaxis eyewear | アイメガネ</title>
+<meta name="description" content="アイメガネのオリジナルフレーム Relaxis（リラクシス）。ファイテンのノーズパッドを採用した、毎日かけていたくなる眼鏡。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+JP:wght@300;400&family=Zen+Maru+Gothic:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --col:375px;
+  --side:calc((100vw - var(--col)) / 2);
+  --bg-right:#F3EEE6;   /* 右パネル：あたたかいベージュ */
+  --bg:#FFFDF9;         /* カラム：やわらかい白 */
+  --bg-sub:#F7F2EA;     /* セクション：クリーム */
+  --ink:#4A4540;        /* 本文：あたたかい焦げ茶グレー */
+  --ink-sub:#8A8178;
+  --line:#E6DED2;
+  --sage:#5F7D66;       /* ボタン：セージグリーン */
+  --sage-soft:#A9BBA9;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-right);
+  color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif;
+  font-weight:400;
+  font-size:16px;
+  line-height:1.9;
+  letter-spacing:.04em;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.en{font-family:"Cormorant Garamond",serif;letter-spacing:.14em}
+/* Cormorantの数字は高さがバラつくので、そろえる */
+.item-name,.item-price,.fv-num,.detail-num,.footer small{font-variant-numeric:lining-nums}
+.maru{font-family:"Zen Maru Gothic",sans-serif}
+
+/* =========================================
+   PC：左（固定画像）／真ん中（スクロール）／右（メニュー）
+   ========================================= */
+.side-left{
+  position:fixed;top:0;left:0;bottom:0;width:var(--side);
+  background:#fff;overflow:hidden;
+}
+.side-left-img{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:8vh 4vw 18vh}
+.side-left-img img{width:100%;height:100%;object-fit:contain}
+.side-left-logo{
+  position:absolute;left:44px;bottom:40px;
+  font-family:"Cormorant Garamond",serif;font-weight:400;
+  font-size:40px;letter-spacing:.1em;line-height:1;color:var(--ink);
+}
+.side-left-logo small{display:block;margin-top:10px;font-size:11px;letter-spacing:.5em;color:var(--ink-sub)}
+
+.side-right{
+  position:fixed;top:0;right:0;bottom:0;width:var(--side);
+  display:flex;align-items:center;justify-content:center;
+}
+.side-right-inner{width:260px}
+.menu{border-top:1px solid var(--line)}
+.menu a{
+  display:flex;align-items:baseline;justify-content:space-between;
+  padding:16px 4px;border-bottom:1px solid var(--line);
+  transition:color .4s ease,padding .4s ease;
+}
+.menu a:hover{color:var(--sage);padding-left:10px}
+.menu .m-en{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:.14em}
+.menu .m-ja{font-family:"Zen Maru Gothic",sans-serif;font-size:11px;color:var(--ink-sub);letter-spacing:.1em}
+.side-right-sub{margin-top:44px;text-align:center}
+.side-right-logo img{height:36px;width:auto;margin:0 auto}
+.side-right-btn{
+  display:flex;align-items:center;justify-content:center;
+  height:48px;margin-top:20px;border-radius:999px;
+  background:var(--sage);color:#fff;
+  font-family:"Zen Maru Gothic",sans-serif;font-size:14px;letter-spacing:.12em;
+  transition:opacity .4s ease;
+}
+.side-right-btn:hover{opacity:.85}
+
+.main{
+  position:relative;z-index:2;
+  width:var(--col);margin:0 auto;
+  background:var(--bg);
+  box-shadow:0 0 40px rgba(120,100,70,.06);
+  overflow:hidden;
+}
+
+/* =========================================
+   真ん中のカラムの中身（375px基準）
+   ========================================= */
+.fade{opacity:0;transform:translateY(16px);transition:opacity 1.4s ease,transform 1.4s ease}
+.fade.is-show{opacity:1;transform:none}
+
+/* ---------- FV ---------- */
+.fv{position:relative;padding-bottom:16px}
+.fv-slides{position:relative;aspect-ratio:375/560;overflow:hidden;background:#fff;border-radius:0 0 var(--radius) var(--radius)}
+.fv-slide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease}
+.fv-slide.is-active{opacity:1}
+.fv-slide img{width:100%;height:100%;object-fit:cover}
+.fv-slide--man img{object-position:68% center}
+.fv-slide--woman img{object-position:30% center}
+.fv-logo{position:absolute;top:16px;left:20px;z-index:3}
+.fv-logo img{height:20px;width:auto}
+.fv-num{
+  display:flex;justify-content:flex-end;align-items:center;gap:8px;
+  padding:14px 24px 0;font-family:"Cormorant Garamond",serif;font-size:14px;letter-spacing:.1em;color:var(--ink-sub);
+}
+.fv-num .now{color:var(--ink)}
+.fv-num .bar{width:28px;height:1px;background:var(--line)}
+.fv-copy{padding:24px 24px 32px;text-align:center}
+.fv-brand{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:44px;letter-spacing:.1em;line-height:1.1}
+.fv-brand small{display:block;margin-top:8px;font-size:11px;letter-spacing:.5em;color:var(--ink-sub)}
+.fv-catch{margin-top:20px;font-family:"Zen Maru Gothic",sans-serif;font-weight:300;font-size:18px;letter-spacing:.22em;line-height:2.1}
+
+/* ---------- 共通 ---------- */
+.sec{padding:80px 24px}
+.sec-head{text-align:center}
+.sec-label{font-size:15px;color:var(--sage);font-style:italic}
+.sec-title{margin-top:8px;font-family:"Zen Maru Gothic",sans-serif;font-weight:400;font-size:22px;letter-spacing:.14em;line-height:1.8}
+
+/* ---------- コンセプト ---------- */
+.concept-catch{margin-top:8px;font-family:"Zen Maru Gothic",sans-serif;font-weight:400;font-size:21px;letter-spacing:.14em;line-height:2;text-align:center}
+.concept-text{margin-top:32px;color:var(--ink-sub);font-size:14px;line-height:2.3}
+.concept-text p+p{margin-top:1.4em}
+.concept-img{margin-top:40px;background:#fff;border-radius:var(--radius);padding:16px}
+
+/* ---------- ラインナップ ---------- */
+.lineup{background:var(--bg-sub)}
+.lineup-list{margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:28px 14px}
+.item-img{aspect-ratio:3/4;background:#fff;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;padding:10px}
+.item-img img{width:100%;height:100%;object-fit:contain}
+.item-body{margin-top:12px;padding:0 2px}
+.item-tag{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:13px;color:var(--sage);letter-spacing:.08em}
+.item-name{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:.06em;line-height:1.4}
+.item-color{font-size:12px;color:var(--ink-sub)}
+.item-size{font-size:11px;color:var(--ink-sub);letter-spacing:.04em}
+.item-price{margin-top:6px;font-family:"Cormorant Garamond",serif;font-size:19px;letter-spacing:.04em}
+.item-price small{font-family:"Noto Sans JP",sans-serif;font-size:10px;margin-left:2px;color:var(--ink-sub)}
+.lineup-note{margin-top:32px;font-size:11px;color:var(--ink-sub);line-height:1.8}
+
+/* ---------- ディテール ---------- */
+.detail{margin-top:64px}
+.detail-img{background:#fff;border:1px solid var(--line);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;padding:16px}
+.detail-img img{width:100%;height:100%;object-fit:contain}
+.detail--wide .detail-img{aspect-ratio:16/10}
+.detail-num{margin-top:20px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:30px;color:var(--sage-soft);letter-spacing:.04em;line-height:1}
+.detail-title{margin-top:10px;font-family:"Zen Maru Gothic",sans-serif;font-weight:400;font-size:19px;letter-spacing:.12em;line-height:1.7}
+.detail-text{margin-top:14px;color:var(--ink-sub);font-size:14px;line-height:2.2}
+.detail-text em{font-style:normal;color:var(--sage);border-bottom:1px solid var(--sage-soft)}
+.detail-note{margin-top:10px;font-size:11px;color:var(--ink-sub)}
+
+/* ---------- シーン ---------- */
+.scene{background:var(--bg-sub)}
+.scene-list{margin-top:40px;display:grid;gap:10px}
+.scene-list figure{overflow:hidden;background:#fff;border-radius:var(--radius)}
+.scene-list img{width:100%;height:100%;object-fit:cover}
+.scene-a{aspect-ratio:4/5}
+.scene-a img{object-position:40% center}
+.scene-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.scene-row figure{aspect-ratio:1/1}
+.scene-row .s-man img{object-position:62% center}
+.scene-row .s-woman img{object-position:38% center}
+.scene-caption{margin-top:28px;text-align:center;font-family:"Zen Maru Gothic",sans-serif;font-weight:300;font-size:16px;letter-spacing:.18em;line-height:2}
+
+/* ---------- CTA ---------- */
+.cta{text-align:center}
+.cta-title{font-family:"Zen Maru Gothic",sans-serif;font-weight:400;font-size:20px;letter-spacing:.14em;line-height:1.9}
+.cta-text{margin-top:18px;color:var(--ink-sub);font-size:14px}
+.cta-btns{margin-top:32px;display:grid;gap:12px}
+.btn{
+  display:flex;align-items:center;justify-content:center;
+  height:56px;border-radius:999px;
+  font-family:"Zen Maru Gothic",sans-serif;font-size:15px;letter-spacing:.14em;
+  transition:opacity .4s ease;
+}
+.btn:hover{opacity:.85}
+.btn--main{background:var(--sage);color:#fff}
+.btn--sub{border:1px solid var(--sage);color:var(--sage)}
+.cta-note{margin-top:20px;font-size:11px;color:var(--ink-sub)}
+
+/* ---------- フッター ---------- */
+.footer{padding:40px 24px 48px;text-align:center;background:var(--bg-sub)}
+.footer img{height:22px;width:auto;margin:0 auto}
+.footer small{display:block;margin-top:14px;font-size:12px;color:var(--ink-sub);font-family:"Cormorant Garamond",serif;letter-spacing:.1em}
+
+/* =========================================
+   左右のパネルを出せない幅：真ん中だけ
+   ========================================= */
+@media (max-width:1023px){
+  .side-left,.side-right{display:none}
+  .main{width:100%;max-width:480px;box-shadow:none}
+  body{background:var(--bg)}
+}
+</style>
+<style>
+  .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
+  .preview-gate-title { font-size: 17px; color: #4A4540; margin: 0 0 8px; letter-spacing: .08em; }
+  .preview-gate-desc { font-size: 13px; color: #8A8178; margin: 0 0 18px; }
+  .preview-gate-input { width: 100%; box-sizing: border-box; font-size: 16px; padding: 10px 14px; border: 1px solid #E6DED2; border-radius: 999px; margin: 0 0 12px; text-align: center; }
+  .preview-gate-button { width: 100%; font-size: 15px; color: #fff; background: #5F7D66; border: none; border-radius: 999px; padding: 11px 12px; cursor: pointer; letter-spacing: .12em; font-family: inherit; }
+  .preview-gate-error { color: #B5533C; font-size: 13px; margin: 12px 0 0; }
+  body.preview-locked > *:not(.preview-gate) { display: none !important; }
+</style>
+</head>
+<body class="preview-locked">
+  <div id="preview-gate" class="preview-gate">
+    <form id="preview-gate-form" class="preview-gate-box">
+      <p class="preview-gate-title">社内レビュー用プレビュー</p>
+      <p class="preview-gate-desc">パスワードを入力してください</p>
+      <input type="password" id="preview-gate-input" class="preview-gate-input" autocomplete="off">
+      <button type="submit" class="preview-gate-button">開く</button>
+      <p id="preview-gate-error" class="preview-gate-error" style="display:none;">パスワードが違います</p>
+    </form>
+  </div>
+  <script>
+  // 社内レビュー用パスワードゲート（テスト用ページだけ。元の index.html には入っていない）
+  (function () {
+    var PASSWORD = 'RELAXIS2026';
+    var STORAGE_KEY = 'relaxispreview_unlocked';
+    var gate = document.getElementById('preview-gate');
+    var form = document.getElementById('preview-gate-form');
+    var input = document.getElementById('preview-gate-input');
+    var error = document.getElementById('preview-gate-error');
+    function unlock() { document.body.classList.remove('preview-locked'); gate.style.display = 'none'; window.dispatchEvent(new Event('resize')); }
+    try { if (sessionStorage.getItem(STORAGE_KEY) === 'true') unlock(); } catch (e) {}
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value === PASSWORD) { try { sessionStorage.setItem(STORAGE_KEY, 'true'); } catch (e) {} unlock(); }
+      else { error.style.display = 'block'; input.value = ''; input.focus(); }
+    });
+  })();
+  </script>
+
+
+<!-- 左：固定の商品写真 -->
+<aside class="side-left">
+  <div class="side-left-img"><img src="images/relaxis_re0002-gdbr_1536_2028.png" alt="Relaxis Re0002"></div>
+  <p class="side-left-logo">Relaxis<small>EYEWEAR</small></p>
+</aside>
+
+<!-- 右：メニュー -->
+<aside class="side-right">
+  <div class="side-right-inner">
+    <nav class="menu">
+      <a href="#concept"><span class="m-en">Concept</span><span class="m-ja">リラクシスについて</span></a>
+      <a href="#lineup"><span class="m-en">Line up</span><span class="m-ja">ラインナップ</span></a>
+      <a href="#details"><span class="m-en">Details</span><span class="m-ja">こだわり</span></a>
+      <a href="#scene"><span class="m-en">Scene</span><span class="m-ja">かけるシーン</span></a>
+      <a href="#shop"><span class="m-en">Shop</span><span class="m-ja">お店でためす</span></a>
+    </nav>
+    <div class="side-right-sub">
+      <a class="side-right-logo" href="https://www.aimegane.com/"><img src="images/logo-aimegane.png" alt="アイメガネ"></a>
+      <a class="side-right-btn" href="#">お近くの店舗をさがす</a>
+    </div>
+  </div>
+</aside>
+
+<!-- 真ん中：スクロールするカラム -->
+<main class="main">
+
+  <!-- FV -->
+  <div class="fv">
+    <div class="fv-slides">
+      <a class="fv-logo" href="https://www.aimegane.com/"><img src="images/logo-aimegane.png" alt="アイメガネ"></a>
+      <div class="fv-slide fv-slide--man is-active"><img src="images/relaxis_fv-man_1408_768.png" alt="窓辺のソファでくつろぐ男性"></div>
+      <div class="fv-slide fv-slide--woman"><img src="images/relaxis_fv-woman_1408_768.png" alt="窓辺のソファでくつろぐ女性"></div>
+    </div>
+    <p class="fv-num"><span class="now">01</span><span class="bar"></span><span>02</span></p>
+    <div class="fv-copy">
+      <p class="fv-brand">Relaxis<small>EYEWEAR</small></p>
+      <p class="fv-catch">肩の力が<br>すっとぬける</p>
+    </div>
+  </div>
+
+  <!-- コンセプト -->
+  <section class="sec concept" id="concept">
+    <div class="sec-head"><p class="sec-label en fade">Concept</p></div>
+    <h2 class="concept-catch fade">一日の終わりまで<br>かけていたくなる眼鏡</h2>
+    <div class="concept-text fade">
+      <p>夕方になると、鼻のあたりが重い。こめかみが少し痛い。眼鏡を外して、ほっとひと息。そんな毎日を変えたくて生まれたのが Relaxis です。</p>
+      <p>鼻にふれるパッドには、ファイテンの技術を。顔にふれる部分をひとつずつ見直して、朝かけたことを忘れるくらいの、やさしいかけ心地をめざしました。</p>
+    </div>
+    <div class="concept-img fade"><img src="images/relaxis_re0004-bk_1347_2156.png" alt="Relaxis RE0004 ブラック"></div>
+  </section>
+
+  <!-- ラインナップ -->
+  <section class="sec lineup" id="lineup">
+    <div class="sec-head">
+      <p class="sec-label en fade">Line up</p>
+      <h2 class="sec-title fade">ラインナップ</h2>
+    </div>
+    <div class="lineup-list">
+      <article class="item fade">
+        <div class="item-img"><img src="images/relaxis_re0002-gdbr_1536_2028.png" alt="Re0002 ゴールド×ブラウン"></div>
+        <div class="item-body">
+          <p class="item-tag">Ladies</p>
+          <p class="item-name">Re0002</p>
+          <p class="item-color">ゴールド×ブラウン</p>
+          <p class="item-size">48□00-000</p>
+          <p class="item-price">¥00,000<small>（税込）</small></p>
+        </div>
+      </article>
+      <article class="item fade">
+        <div class="item-img"><img src="images/relaxis_re0002-gdbk_1536_2730.png" alt="Re0002 ゴールド×ブラック"></div>
+        <div class="item-body">
+          <p class="item-tag">Ladies</p>
+          <p class="item-name">Re0002</p>
+          <p class="item-color">ゴールド×ブラック</p>
+          <p class="item-size">48□00-000</p>
+          <p class="item-price">¥00,000<small>（税込）</small></p>
+        </div>
+      </article>
+      <article class="item fade">
+        <div class="item-img"><img src="images/relaxis_re0004-bk_1347_2156.png" alt="RE0004 ブラック"></div>
+        <div class="item-body">
+          <p class="item-tag">Men's</p>
+          <p class="item-name">RE0004</p>
+          <p class="item-color">ブラック</p>
+          <p class="item-size">49□00-000</p>
+          <p class="item-price">¥00,000<small>（税込）</small></p>
+        </div>
+      </article>
+      <article class="item fade">
+        <div class="item-img"><img src="images/relaxis_gm_1536_2730.png" alt="Relaxis ガンメタル"></div>
+        <div class="item-body">
+          <p class="item-tag">Men's</p>
+          <p class="item-name">RE0000</p>
+          <p class="item-color">ガンメタル</p>
+          <p class="item-size">00□00-000</p>
+          <p class="item-price">¥00,000<small>（税込）</small></p>
+        </div>
+      </article>
+    </div>
+    <p class="lineup-note">※価格はフレームのみの税込価格です<br>※取り扱い・在庫は店舗によって異なります</p>
+  </section>
+
+  <!-- ディテール -->
+  <section class="sec details" id="details">
+    <div class="sec-head">
+      <p class="sec-label en fade">Details</p>
+      <h2 class="sec-title fade">顔にふれるところから<br>考えました</h2>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_detail-tip_1185_2400.png" alt="ファイテンのロゴ入りノーズパッドとモダン"></div>
+      <p class="detail-num">01</p>
+      <h3 class="detail-title">ファイテンのノーズパッド</h3>
+      <p class="detail-text">いちばん負担がかかりやすい鼻まわりには、<em>ファイテンの技術</em>を取り入れたパッドを採用。毎日ふれる場所だからこそ、つけ心地にこだわりました。</p>
+      <p class="detail-note">※ファイテン社の技術を取り入れたコラボレーション仕様です</p>
+    </div>
+
+    <div class="detail detail--wide fade">
+      <div class="detail-img"><img src="images/relaxis_detail-pad_2730_1536.jpeg" alt="波のような形のブリッジ"></div>
+      <p class="detail-num">02</p>
+      <h3 class="detail-title">波のかたちのブリッジ</h3>
+      <p class="detail-text">レンズをつなぐブリッジは、ゆるやかな波の形。正面から見たときの軽やかさと、横顔にのぞく遊び心をひとつに。</p>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_detail-hinge_1536_2730.png" alt="丁番まわりのアップ"></div>
+      <p class="detail-num">03</p>
+      <h3 class="detail-title">細部までやわらかく</h3>
+      <p class="detail-text">丁番まわりは、角をおさえたなめらかなライン。マットな質感で、肌なじみのよい落ち着いた表情に仕上げています。</p>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_detail-temple_1536_2034.png" alt="MADE IN JAPANの刻印が入ったモダン"></div>
+      <p class="detail-num">04</p>
+      <h3 class="detail-title">MADE IN JAPAN</h3>
+      <p class="detail-text">モダンに入った<em>MADE IN JAPAN</em>の文字。長く使う道具だから、つくりの確かさにもこだわりました。</p>
+    </div>
+  </section>
+
+  <!-- シーン -->
+  <section class="sec scene" id="scene">
+    <div class="sec-head">
+      <p class="sec-label en fade">Scene</p>
+      <h2 class="sec-title fade">いつもの時間を<br>すこしやさしく</h2>
+    </div>
+    <div class="scene-list fade">
+      <figure class="scene-a"><img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性"></figure>
+      <div class="scene-row">
+        <figure class="s-man"><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
+        <figure class="s-woman"><img src="images/relaxis_scene-woman-glasses_1408_768.png" alt="Re0002をかけて窓辺で微笑む女性"></figure>
+      </div>
+    </div>
+    <p class="scene-caption fade">読書も 仕事も<br>窓辺のひと休みも</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="sec cta" id="shop">
+    <h2 class="cta-title fade">まずは一度<br>かけてみてください</h2>
+    <p class="cta-text fade">かけ心地は 実際にかけてみるのがいちばんです<br>アイメガネ各店でお試しいただけます</p>
+    <div class="cta-btns fade">
+      <a class="btn btn--main" href="#">お近くの店舗をさがす</a>
+      <a class="btn btn--sub" href="#">来店予約をする</a>
+    </div>
+    <p class="cta-note">※本庄南大通り店ではお取り扱いがありません</p>
+  </section>
+
+  <footer class="footer">
+    <img src="images/logo-aimegane.png" alt="アイメガネ">
+    <small>© AIMEGANE</small>
+  </footer>
+</main>
+
+<script>
+// FVの切りかえ（7秒ごと）
+(function(){
+  var slides = document.querySelectorAll('.fv-slide');
+  var nums = document.querySelectorAll('.fv-num span:not(.bar)');
+  var i = 0;
+  setInterval(function(){
+    slides[i].classList.remove('is-active'); nums[i].classList.remove('now');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active'); nums[i].classList.add('now');
+  }, 7000);
+})();
+
+// ふわっと表示
+(function(){
+  var els = document.querySelectorAll('.fade');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('is-show'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-show'); io.unobserve(en.target); }
+    });
+  }, { threshold: .15 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
