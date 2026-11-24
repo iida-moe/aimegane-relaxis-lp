@@ -278,7 +278,14 @@ h2,h3{text-wrap:balance}
 .btn{border-radius:2px}
 .colors-label .en{font-size:11px;letter-spacing:.18em}
 .model-colors .c-no,.sw-no{font-size:11px}
-</style>
+/* 11/24 Details：枠をなくして写真を大きく（カラムの端から端まで）・01は人物 */
+.detail{display:block;margin-top:72px}
+.detail-img,.detail-img--photo{margin:0 -24px;padding:0;border:none;border-radius:0;background:none;aspect-ratio:auto;display:block}
+.detail-img img{width:100%;height:auto;max-height:440px;object-fit:contain}
+.detail-img--photo img{max-height:none;aspect-ratio:4/5;object-fit:cover;object-position:40% center}
+.detail-num{margin-top:28px;font-size:32px}
+.detail-title{margin-top:10px;font-size:20px}
+.detail-text{margin-top:16px}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -431,7 +438,7 @@ h2,h3{text-wrap:balance}
     </div>
 
     <div class="detail fade">
-      <div class="detail-img"><img src="images/relaxis_re0002-gdbk_1536_2730.png" alt="Re0002 マットゴールド・黒の樹脂七宝"></div>
+      <div class="detail-img detail-img--photo"><img src="images/relaxis_scene-woman-glasses_1408_768.png" alt="Re0002をかけて窓辺で微笑む女性"></div>
       <p class="detail-num">01</p>
       <h3 class="detail-title">クラシックなデザイン</h3>
       <p class="detail-text">形は、昔から長く愛されてきたクラシックなデザインです。伝統工芸の七宝の風合いを現代の技術で再現した樹脂七宝や、細かな筋目を入れた仕上げ（シャーリング）など、細かな部分まで丁寧に仕上げました。</p>
@@ -474,7 +481,7 @@ h2,h3{text-wrap:balance}
       <figure class="scene-a"><img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性"></figure>
       <div class="scene-row">
         <figure class="s-man"><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
-        <figure class="s-woman"><img src="images/relaxis_scene-woman-glasses_1408_768.png" alt="Re0002をかけて窓辺で微笑む女性"></figure>
+        <figure class="s-woman"><img src="images/relaxis_scene-woman_1408_768.png" alt="窓辺でほほえむ女性"></figure>
       </div>
     </div>
     <p class="scene-caption fade">いつもの自分のままで。</p>
