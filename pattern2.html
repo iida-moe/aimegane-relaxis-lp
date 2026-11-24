@@ -8,14 +8,14 @@
 <meta name="description" content="日本製のチタンフレームに、ファイテン社の独自技術を採用。毎日かけながら、リラックスとリカバリーをサポートする、アイメガネオリジナルのメガネフレームです。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Zen+Maru+Gothic:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* パターン2：画面いっぱいに広がるレイアウト（眼鏡市場の形にする前の版） */
 :root{
   --bg:#FAF9F6;
   --bg-sub:#F1EFEA;
   --white:#FFFFFF;
-  --ink:#2B2B2B;
+  --ink:#3E3A36;
   --ink-sub:#6E6A64;
   --line:#DCD8D0;
   --green:#2E5A3A;
@@ -25,7 +25,7 @@ html{scroll-behavior:smooth}
 body{
   background:var(--bg);
   color:var(--ink);
-  font-family:"Noto Sans JP",sans-serif;
+  font-family:"Zen Kaku Gothic New",sans-serif;
   font-weight:400;
   font-size:16px;
   line-height:1.9;
@@ -34,7 +34,7 @@ body{
 }
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
-.en{font-family:"Montserrat",sans-serif;letter-spacing:.18em}
+.en{font-family:"Cormorant Garamond",serif;letter-spacing:.18em}
 
 /* ---------- ヘッダー ---------- */
 .header{
@@ -46,7 +46,7 @@ a{color:inherit;text-decoration:none}
 }
 .header-logo img{height:26px;width:auto}
 .header-nav{display:flex;gap:28px;font-size:12px}
-.header-nav a{font-family:"Montserrat",sans-serif;letter-spacing:.16em;color:var(--ink-sub)}
+.header-nav a{font-family:"Cormorant Garamond",serif;letter-spacing:.16em;color:var(--ink-sub)}
 .header-nav a:hover{color:var(--ink)}
 
 /* ---------- FV ---------- */
@@ -60,7 +60,7 @@ a{color:inherit;text-decoration:none}
 .fv-slide--man .fv-copy{left:8vw}
 .fv-slide--woman .fv-copy{right:8vw}
 .fv-brand{
-  font-family:"Montserrat",sans-serif;font-weight:300;
+  font-family:"Cormorant Garamond",serif;font-weight:300;
   font-size:clamp(40px,5vw,72px);letter-spacing:.12em;line-height:1.1;
 }
 .fv-brand small{display:block;font-size:.24em;letter-spacing:.5em;margin-top:10px;color:var(--ink-sub)}
@@ -107,7 +107,7 @@ section{padding:120px 24px}
 .model-img img{width:100%;height:100%;object-fit:contain}
 .model-img--none{background:var(--bg-sub);color:var(--ink-sub);font-size:12px;letter-spacing:.1em}
 .model-head{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
-.model-name{font-family:"Montserrat",sans-serif;font-size:18px;letter-spacing:.1em}
+.model-name{font-family:"Cormorant Garamond",serif;font-size:18px;letter-spacing:.1em}
 .model-spec{font-size:12px;color:var(--ink-sub)}
 .model-catch{margin-top:12px;font-weight:400;font-size:15px;letter-spacing:.06em;line-height:1.8}
 .model-text{margin-top:10px;font-size:13px;color:var(--ink-sub);line-height:2}
@@ -123,7 +123,7 @@ section{padding:120px 24px}
 .detail:nth-of-type(even) .detail-img{order:2}
 .detail-img{background:var(--white);display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;padding:24px}
 .detail-img img{width:100%;height:100%;object-fit:contain}
-.detail-num{font-family:"Montserrat",sans-serif;font-weight:300;font-size:44px;color:var(--line);letter-spacing:.06em;line-height:1}
+.detail-num{font-family:"Cormorant Garamond",serif;font-weight:300;font-size:44px;color:var(--line);letter-spacing:.06em;line-height:1}
 .detail-title{margin-top:20px;font-weight:400;font-size:22px;letter-spacing:.14em;line-height:1.8}
 .detail-text{margin-top:22px;color:var(--ink-sub);font-size:15px;line-height:2.2}
 .detail .must{margin:24px 0 0;max-width:none}
@@ -156,7 +156,7 @@ section{padding:120px 24px}
 /* ---------- フッター ---------- */
 .footer{padding:56px 24px;text-align:center;background:var(--bg)}
 .footer img{height:28px;width:auto;margin:0 auto}
-.footer small{display:block;margin-top:18px;font-size:11px;color:var(--ink-sub);font-family:"Montserrat",sans-serif;letter-spacing:.1em}
+.footer small{display:block;margin-top:18px;font-size:11px;color:var(--ink-sub);font-family:"Cormorant Garamond",serif;letter-spacing:.1em}
 
 /* ---------- タブレット ---------- */
 @media (max-width:1024px){
@@ -223,8 +223,17 @@ section{padding:120px 24px}
   .btn{min-width:0;width:100%}
 }
 .nb{display:inline-block}
+/* 11/24 コンセプト文：PCは意味の切れ目で改行（「です。」だけ次の行に落ちないように）・スマホは自然に流す */
+.lead p{text-wrap:pretty}
+@media (max-width:768px){.pc-br{display:none}}
 .detail-title{letter-spacing:.06em}
-</style>
+/* 11/24 柔らかい印象に：見出しは丸ゴシック・英字はCormorant・文節で改行 */
+.en,.fv-brand,.model-name,.detail-num{font-variant-numeric:lining-nums}
+.fv-catch,.sec-title,.concept-catch,.model-catch,.detail-title,.scene-caption,.cta-title{font-family:"Zen Maru Gothic",sans-serif;font-weight:400}
+h1,h2,h3,.fv-catch,.concept-name,.scene-caption,.cta-text{word-break:auto-phrase}
+h2,h3,.fv-catch,.scene-caption{text-wrap:balance}
+.fv-brand{font-weight:400}
+.sec-label{font-size:14px}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -299,10 +308,10 @@ section{padding:120px 24px}
 <section class="concept" id="concept">
   <div class="inner">
     <p class="sec-label en fade">CONCEPT</p>
-    <h2 class="concept-catch fade">一日中かけるメガネだから、<br>リラックスとリカバリーのことも考えたい。</h2>
+    <h2 class="concept-catch fade"><span class="nb">一日中かけるメガネだから、</span><br><span class="nb">リラックスとリカバリーの</span><span class="nb">ことも考えたい。</span></h2>
     <div class="lead fade">
-      <p>Rlaxis eyewearは、昔から長く愛されてきたクラシックな形の、日本製のチタンフレームです。</p>
-      <p>メガネが顔に触れるのは、鼻あてと、耳にかかる先端部分の2か所。そこに、世界のトップアスリートからも信頼を集めるファイテン社の独自技術「ミクロチタンボール」を採用しました。</p>
+      <p>Rlaxis eyewearは、昔から長く愛されてきた<br class="pc-br">クラシックな形の、日本製のチタンフレームです。</p>
+      <p>メガネが顔に触れるのは、鼻あてと、耳にかかる先端部分の2か所。<br class="pc-br">そこに、世界のトップアスリートからも信頼を集める<br class="pc-br">ファイテン社の独自技術「ミクロチタンボール」を採用しました。</p>
       <p>身に着けることで、お顔回りのリラックスとリカバリーをサポートします。</p>
       <p>仕事の日も、休日も。いつもの自分のままで。</p>
     </div>
