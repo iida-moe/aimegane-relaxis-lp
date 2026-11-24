@@ -294,6 +294,32 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
 .sw-name .c-frame{display:block;color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;letter-spacing:.04em}
 .sw-name .c-tip{display:block;font-size:11.5px;color:var(--ink-sub);font-family:"Zen Kaku Gothic New",sans-serif;letter-spacing:.04em}
 .sw-name .c-tip::before{content:"";display:inline-block;width:10px;height:1px;background:currentColor;vertical-align:middle;margin-right:6px}
+/* 11/24 写真をセクションの間に散らす（ひと息の帯）・CTAは写真つき */
+.band{position:relative;height:min(72vh,640px);min-height:380px;overflow:hidden;background:var(--white)}
+.band img{width:100%;height:100%;object-fit:cover}
+.band--right img{object-position:30% center}
+.band--left img{object-position:75% center}
+.band-copy{position:absolute;top:50%;transform:translateY(-50%);font-family:"Shippori Mincho",serif;font-size:clamp(22px,2.2vw,30px);letter-spacing:.2em;line-height:2;color:var(--ink)}
+.band-copy.fade{transform:translateY(calc(-50% + 24px))}
+.band-copy.fade.is-show{transform:translateY(-50%)}
+.band--right .band-copy{right:9vw}
+.band--left .band-copy{left:9vw}
+.cta-row{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:80px;align-items:center;max-width:960px;text-align:left}
+.cta-photo{aspect-ratio:4/5;overflow:hidden}
+.cta-photo img{width:100%;height:100%;object-fit:cover;object-position:45% center}
+.cta-row .cta-btns{justify-content:flex-start}
+.cta-row .btn{min-width:240px}
+@media (max-width:768px){
+  .band{height:auto;min-height:0}
+  .band img{height:auto;aspect-ratio:4/3}
+  .band-copy,.band-copy.fade,.band-copy.fade.is-show{position:static;transform:none;padding:28px 24px 8px;text-align:center;font-size:18px;background:var(--bg)}
+  .band-copy.fade{opacity:0;transition:opacity 1s}
+  .band-copy.fade.is-show{opacity:1}
+  .cta-row{grid-template-columns:1fr;gap:36px;text-align:center}
+  .cta-photo{aspect-ratio:4/3;margin:0 -28px}
+  .cta-row .cta-btns{justify-content:center}
+  .cta-row .btn{min-width:0}
+}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -437,6 +463,13 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
   </div>
 </section>
 
+<!-- ひと息（写真＋言葉） -->
+<div class="band band--right">
+  <img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性">
+  <p class="band-copy fade">仕事の日も、休日も。</p>
+</div>
+
+
 <!-- ディテール（提供価値の4つの柱） -->
 <section class="details" id="details">
   <div class="inner">
@@ -488,30 +521,25 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
   </div>
 </section>
 
-<!-- シーン -->
-<section class="scene">
-  <div class="inner">
-    <div class="scene-head">
-      <p class="sec-label en fade">SCENE</p>
-      <h2 class="sec-title fade">仕事の日も、休日も。</h2>
-    </div>
-    <div class="scene-grid fade">
-      <figure class="scene-a"><img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性"></figure>
-      <figure><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
-      <figure><img src="images/relaxis_scene-woman_1408_768.png" alt="窓辺でほほえむ女性"></figure>
-    </div>
-    <p class="scene-caption fade">いつもの自分のままで。</p>
-  </div>
-</section>
+<!-- ひと息（写真＋言葉） -->
+<div class="band band--left">
+  <img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性">
+  <p class="band-copy fade">いつもの自分のままで。</p>
+</div>
+
+
 
 <!-- CTA -->
 <section class="cta" id="shop">
-  <div class="inner">
+  <div class="inner cta-row">
+    <figure class="cta-photo fade"><img src="images/relaxis_scene-woman_1408_768.png" alt="窓辺でほほえむ女性"></figure>
+    <div class="cta-body">
     <h2 class="cta-title fade">日常の軸に、<br>リカバリーサポート。</h2>
     <p class="cta-text fade">店頭では、アイメガネのスタッフがお顔に合わせて、<br>かけ具合を丁寧に調整いたします。</p>
     <div class="cta-btns fade">
       <a class="btn btn--main" href="#">お近くの店舗をさがす</a>
       <a class="btn btn--sub" href="#">来店予約をする</a>
+    </div>
     </div>
   </div>
 </section>
