@@ -304,7 +304,14 @@ h2,h3{text-wrap:balance}
 .tabs a{font-weight:400;font-size:13px;letter-spacing:.12em;border-bottom-width:1px}
 .sec-title,.concept-catch,.cta-title{letter-spacing:.12em}
 .must{background:var(--bg-sub)}.model-img,.model-img--none,.must,.concept-img,.scene-list figure{border-radius:0}
-</style>
+/* 11/24 04は1枚に（鼻あてと耳にかかる部分が両方写る所を4:5で） */
+.detail-img--tall img{aspect-ratio:4/5;object-fit:cover;object-position:50% 45%}
+/* 11/24 セクションのつなぎ目：背景は全部白でつなげて、ラベルの上に細い縦線 */
+.sec,.concept,.lineup,.details,.scene,.cta{background:#fff}
+.sec{padding:56px 24px 72px}
+.sec-head::before{content:"";display:block;width:1px;height:40px;background:#C9CED2;margin:0 auto 18px}
+.model{background:#F5F7F8}
+.model-img{background:#fff}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -479,7 +486,6 @@ h2,h3{text-wrap:balance}
     </div>
 
     <div class="detail fade">
-      <div class="detail-img detail-img--wide"><img src="images/relaxis_detail-pad_2730_1536.jpeg" alt="ファイテンのマークが入った鼻あて"></div>
       <div class="detail-img detail-img--tall"><img src="images/relaxis_detail-tip_1536_2730.png" alt="ファイテンのロゴが入った耳にかかる部分"></div>
       <p class="detail-num">04</p>
       <h3 class="detail-title"><span class="nb">かける、</span><span class="nb">リカバリーサポート。</span></h3>
