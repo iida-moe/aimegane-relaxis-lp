@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rlaxis eyewear | アイメガネ</title>
+<meta name="description" content="日本製のチタンフレームに、ファイテン社の独自技術を採用。毎日かけながら、リラックスとリカバリーをサポートする、アイメガネオリジナルのメガネフレームです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* パターン2：画面いっぱいに広がるレイアウト（眼鏡市場の形にする前の版） */
+:root{
+  --bg:#FAF9F6;
+  --bg-sub:#F1EFEA;
+  --white:#FFFFFF;
+  --ink:#2B2B2B;
+  --ink-sub:#6E6A64;
+  --line:#DCD8D0;
+  --green:#2E5A3A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif;
+  font-weight:400;
+  font-size:16px;
+  line-height:1.9;
+  letter-spacing:.04em;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.en{font-family:"Montserrat",sans-serif;letter-spacing:.18em}
+
+/* ---------- ヘッダー ---------- */
+.header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;
+  background:rgba(250,249,246,.88);
+  backdrop-filter:blur(6px);
+}
+.header-logo img{height:26px;width:auto}
+.header-nav{display:flex;gap:28px;font-size:12px}
+.header-nav a{font-family:"Montserrat",sans-serif;letter-spacing:.16em;color:var(--ink-sub)}
+.header-nav a:hover{color:var(--ink)}
+
+/* ---------- FV ---------- */
+.fv{position:relative;height:100vh;max-height:56.25vw;min-height:600px;overflow:hidden;background:var(--white)}
+.fv-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.fv-slide.is-active{opacity:1}
+.fv-slide img{width:100%;height:100%;object-fit:cover}
+.fv-slide--man img{object-position:70% center}
+.fv-slide--woman img{object-position:30% center}
+.fv-copy{position:absolute;top:50%;transform:translateY(-50%);z-index:2}
+.fv-slide--man .fv-copy{left:8vw}
+.fv-slide--woman .fv-copy{right:8vw}
+.fv-brand{
+  font-family:"Montserrat",sans-serif;font-weight:300;
+  font-size:clamp(40px,5vw,72px);letter-spacing:.12em;line-height:1.1;
+}
+.fv-brand small{display:block;font-size:.24em;letter-spacing:.5em;margin-top:10px;color:var(--ink-sub)}
+.fv-catch{margin-top:36px;font-weight:300;font-size:clamp(20px,1.8vw,26px);letter-spacing:.16em;line-height:2}
+.fv-scroll{
+  position:absolute;bottom:28px;left:50%;transform:translateX(-50%);z-index:3;
+  font-size:11px;color:var(--ink-sub);text-align:center;
+}
+.fv-scroll::after{
+  content:"";display:block;width:1px;height:40px;margin:10px auto 0;background:var(--ink-sub);
+  animation:scrollLine 2s ease-in-out infinite;transform-origin:top;
+}
+@keyframes scrollLine{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+/* ---------- 共通 ---------- */
+section{padding:120px 24px}
+.inner{max-width:1080px;margin:0 auto}
+.sec-label{font-size:12px;color:var(--ink-sub)}
+.sec-title{margin-top:12px;font-weight:300;font-size:26px;letter-spacing:.14em;line-height:1.8}
+.lead{margin:40px auto 0;max-width:640px;color:var(--ink-sub);font-size:15px;line-height:2.3}
+.lead p+p{margin-top:1.4em}
+.fade{opacity:0;transform:translateY(24px);transition:opacity 1s ease,transform 1s ease}
+.fade.is-show{opacity:1;transform:none}
+
+/* ファイテン社の必須表記（文面は一字も変えない） */
+.must{margin:40px auto 0;max-width:720px;padding:20px 24px;background:var(--bg-sub);font-size:12px;line-height:1.9;color:var(--ink-sub);text-align:left}
+.must p+p{margin-top:.4em}
+.lineup .must{background:var(--bg)}
+
+/* ---------- コンセプト ---------- */
+.concept{text-align:center;background:var(--bg)}
+.concept-catch{margin-top:12px;font-weight:300;font-size:26px;letter-spacing:.14em;line-height:2}
+.concept .lead{text-align:center}
+.concept-name{margin-top:48px;font-size:13px;color:var(--ink-sub);line-height:2}
+.concept-name .en{font-size:24px;color:var(--ink);letter-spacing:.14em}
+.concept-img{max-width:480px;margin:64px auto 0}
+
+/* ---------- ラインナップ ---------- */
+.lineup{background:var(--white)}
+.lineup-head{text-align:center}
+.lineup .lead{text-align:left}
+.lineup-list{margin-top:72px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px 24px}
+.model-img{aspect-ratio:3/4;display:flex;align-items:center;justify-content:center;padding:12px;background:var(--white)}
+.model-img img{width:100%;height:100%;object-fit:contain}
+.model-img--none{background:var(--bg-sub);color:var(--ink-sub);font-size:12px;letter-spacing:.1em}
+.model-head{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.model-name{font-family:"Montserrat",sans-serif;font-size:18px;letter-spacing:.1em}
+.model-spec{font-size:12px;color:var(--ink-sub)}
+.model-catch{margin-top:12px;font-weight:400;font-size:15px;letter-spacing:.06em;line-height:1.8}
+.model-text{margin-top:10px;font-size:13px;color:var(--ink-sub);line-height:2}
+.model-more summary{display:none}
+.model-colors{margin-top:14px;font-size:12px;line-height:1.7}
+.model-colors li{list-style:none;padding:6px 0;border-top:1px solid var(--line)}
+.lineup-note{margin-top:48px;text-align:center;font-size:12px;color:var(--ink-sub);line-height:1.9}
+
+/* ---------- ディテール ---------- */
+.details{background:var(--bg)}
+.details-head{text-align:center}
+.detail{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:72px;margin-top:110px}
+.detail:nth-of-type(even) .detail-img{order:2}
+.detail-img{background:var(--white);display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;padding:24px}
+.detail-img img{width:100%;height:100%;object-fit:contain}
+.detail-num{font-family:"Montserrat",sans-serif;font-weight:300;font-size:44px;color:var(--line);letter-spacing:.06em;line-height:1}
+.detail-title{margin-top:20px;font-weight:400;font-size:22px;letter-spacing:.14em;line-height:1.8}
+.detail-text{margin-top:22px;color:var(--ink-sub);font-size:15px;line-height:2.2}
+.detail .must{margin:24px 0 0;max-width:none}
+
+/* ---------- シーン ---------- */
+.scene{background:var(--bg-sub);padding-bottom:140px}
+.scene-head{text-align:center}
+.scene-grid{margin-top:64px;display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:auto auto;gap:20px}
+.scene-grid figure{overflow:hidden;background:var(--white)}
+.scene-grid img{width:100%;height:100%;object-fit:cover}
+.scene-a{grid-row:1 / 3}
+.scene-a img{object-position:65% center}
+.scene-caption{margin-top:40px;text-align:center;font-weight:300;font-size:20px;letter-spacing:.2em;line-height:2.1}
+
+/* ---------- CTA ---------- */
+.cta{background:var(--white);text-align:center}
+.cta-title{font-weight:300;font-size:26px;letter-spacing:.18em;line-height:1.9}
+.cta-text{margin-top:24px;color:var(--ink-sub);font-size:15px;line-height:2}
+.cta-btns{margin:48px auto 0;display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:260px;height:60px;padding:0 32px;
+  font-size:15px;letter-spacing:.16em;
+  transition:opacity .3s ease;
+}
+.btn:hover{opacity:.8}
+.btn--main{background:var(--green);color:#fff}
+.btn--sub{border:1px solid var(--ink);color:var(--ink)}
+
+/* ---------- フッター ---------- */
+.footer{padding:56px 24px;text-align:center;background:var(--bg)}
+.footer img{height:28px;width:auto;margin:0 auto}
+.footer small{display:block;margin-top:18px;font-size:11px;color:var(--ink-sub);font-family:"Montserrat",sans-serif;letter-spacing:.1em}
+
+/* ---------- タブレット ---------- */
+@media (max-width:1024px){
+  .lineup-list{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- スマホ ---------- */
+@media (max-width:768px){
+  .header{padding:12px 24px}
+  .header-logo img{height:22px}
+  .header-nav{display:none}
+
+  .fv{height:auto;max-height:none;min-height:0;display:block}
+  .fv-slide{position:relative;inset:auto;display:none;opacity:1}
+  .fv-slide.is-active{display:block;animation:fvIn 1.4s ease}
+  @keyframes fvIn{from{opacity:0}to{opacity:1}}
+  .fv-slide img{height:auto;aspect-ratio:4/5;margin-top:50px}
+  .fv-slide--man img{object-position:72% center}
+  .fv-slide--woman img{object-position:28% center}
+  .fv-copy,.fv-slide--man .fv-copy,.fv-slide--woman .fv-copy{
+    position:static;transform:none;padding:36px 28px 64px;text-align:center;background:var(--white);
+  }
+  .fv-brand{font-size:40px}
+  .fv-catch{margin-top:20px;font-size:17px}
+  .fv-scroll{display:none}
+
+  section{padding:80px 28px}
+  .sec-title{font-size:20px}
+  .concept-catch{font-size:19px}
+  .lead{margin-top:28px;font-size:14px}
+  .concept .lead{text-align:left}
+  .concept-img{margin-top:48px}
+  .must{padding:16px;font-size:11px}
+
+  .lineup-list{grid-template-columns:1fr;gap:56px;margin-top:48px}
+  .model-img{aspect-ratio:4/3}
+  /* スマホは紹介文をたたむ（「くわしく見る」で開く） */
+  .model-more{margin-top:8px}
+  .model-more summary{
+    display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;
+    font-size:12px;color:var(--green);letter-spacing:.08em;
+  }
+  .model-more summary::-webkit-details-marker{display:none}
+  .model-more summary::after{content:"＋"}
+  .model-more[open] summary::after{content:"－"}
+
+  /* 写真は小さめにして、番号・見出しの横に並べる */
+  .detail{grid-template-columns:112px 1fr;column-gap:18px;row-gap:0;align-items:end;margin-top:48px}
+  .detail-body{display:contents}
+  .detail:nth-of-type(even) .detail-img{order:0}
+  .detail-img{grid-row:1 / 3;aspect-ratio:1/1;padding:8px}
+  .detail-num{font-size:28px}
+  .detail-title{font-size:18px;margin-top:6px;align-self:start;line-height:1.6}
+  .detail-text{grid-column:1 / -1;font-size:14px;margin-top:18px}
+  .detail .must{grid-column:1 / -1}
+
+  .scene-grid{grid-template-columns:1fr;gap:12px;margin-top:40px}
+  .scene-a{grid-row:auto}
+  .scene-grid figure{aspect-ratio:16/10}
+  .scene-caption{font-size:16px}
+
+  .cta-title{font-size:20px}
+  .cta-text{font-size:14px}
+  .btn{min-width:0;width:100%}
+}
+.nb{display:inline-block}
+.detail-title{letter-spacing:.06em}
+</style>
+<style>
+  .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
+  .preview-gate-title { font-size: 17px; color: #4A4540; margin: 0 0 8px; letter-spacing: .08em; }
+  .preview-gate-desc { font-size: 13px; color: #8A8178; margin: 0 0 18px; }
+  .preview-gate-input { width: 100%; box-sizing: border-box; font-size: 16px; padding: 10px 14px; border: 1px solid #E6DED2; border-radius: 999px; margin: 0 0 12px; text-align: center; }
+  .preview-gate-button { width: 100%; font-size: 15px; color: #fff; background: #5F7D66; border: none; border-radius: 999px; padding: 11px 12px; cursor: pointer; letter-spacing: .12em; font-family: inherit; }
+  .preview-gate-error { color: #B5533C; font-size: 13px; margin: 12px 0 0; }
+  body.preview-locked > *:not(.preview-gate) { display: none !important; }
+</style>
+</head>
+<body class="preview-locked">
+  <div id="preview-gate" class="preview-gate">
+    <form id="preview-gate-form" class="preview-gate-box">
+      <p class="preview-gate-title">社内レビュー用プレビュー</p>
+      <p class="preview-gate-desc">パスワードを入力してください</p>
+      <input type="password" id="preview-gate-input" class="preview-gate-input" autocomplete="off">
+      <button type="submit" class="preview-gate-button">開く</button>
+      <p id="preview-gate-error" class="preview-gate-error" style="display:none;">パスワードが違います</p>
+    </form>
+  </div>
+  <script>
+  // 社内レビュー用パスワードゲート（テスト用ページだけ。元の index.html には入っていない）
+  (function () {
+    var PASSWORD = 'RELAXIS2026';
+    var STORAGE_KEY = 'relaxispreview_unlocked';
+    var gate = document.getElementById('preview-gate');
+    var form = document.getElementById('preview-gate-form');
+    var input = document.getElementById('preview-gate-input');
+    var error = document.getElementById('preview-gate-error');
+    function unlock() { document.body.classList.remove('preview-locked'); gate.style.display = 'none'; window.dispatchEvent(new Event('resize')); }
+    try { if (sessionStorage.getItem(STORAGE_KEY) === 'true') unlock(); } catch (e) {}
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value === PASSWORD) { try { sessionStorage.setItem(STORAGE_KEY, 'true'); } catch (e) {} unlock(); }
+      else { error.style.display = 'block'; input.value = ''; input.focus(); }
+    });
+  })();
+  </script>
+
+
+<header class="header">
+  <a class="header-logo" href="https://www.aimegane.com/"><img src="images/logo-aimegane.png" alt="アイメガネ"></a>
+  <nav class="header-nav">
+    <a href="#concept">CONCEPT</a>
+    <a href="#lineup">LINE UP</a>
+    <a href="#details">DETAILS</a>
+    <a href="#shop">SHOP</a>
+  </nav>
+</header>
+
+<!-- FV：男性・女性を切りかえ -->
+<div class="fv">
+  <div class="fv-slide fv-slide--man is-active">
+    <img src="images/relaxis_fv-man_1408_768.png" alt="窓辺のソファでくつろぐ男性">
+    <div class="fv-copy">
+      <p class="fv-brand">Rlaxis<small>EYEWEAR</small></p>
+      <p class="fv-catch">リラックスとリカバリーを、<br>日常の軸に。</p>
+    </div>
+  </div>
+  <div class="fv-slide fv-slide--woman">
+    <img src="images/relaxis_fv-woman_1408_768.png" alt="窓辺のソファでくつろぐ女性">
+    <div class="fv-copy">
+      <p class="fv-brand">Rlaxis<small>EYEWEAR</small></p>
+      <p class="fv-catch">リラックスとリカバリーを、<br>日常の軸に。</p>
+    </div>
+  </div>
+  <p class="fv-scroll en">SCROLL</p>
+</div>
+
+<!-- コンセプト（ブランドステートメント） -->
+<section class="concept" id="concept">
+  <div class="inner">
+    <p class="sec-label en fade">CONCEPT</p>
+    <h2 class="concept-catch fade">一日中かけるメガネだから、<br>リラックスとリカバリーのことも考えたい。</h2>
+    <div class="lead fade">
+      <p>Rlaxis eyewearは、昔から長く愛されてきたクラシックな形の、日本製のチタンフレームです。</p>
+      <p>メガネが顔に触れるのは、鼻あてと、耳にかかる先端部分の2か所。そこに、世界のトップアスリートからも信頼を集めるファイテン社の独自技術「ミクロチタンボール」を採用しました。</p>
+      <p>身に着けることで、お顔回りのリラックスとリカバリーをサポートします。</p>
+      <p>仕事の日も、休日も。いつもの自分のままで。</p>
+    </div>
+    <p class="concept-name fade"><span class="nb">Rlaxis（リラクシス）は、</span><span class="nb">「Relax（リラックス）」と「Axis（軸）」を</span><span class="nb">合わせた名前です。</span></p>
+    <div class="must fade">
+      <p>・本商品はファイテン社の独自技術を取り入れたコラボレーション商品です。</p>
+      <p>・この商品のノーズパッドおよびモダン部分にファイテン社の「ミクロチタンボール」を採用しており、この技術を用いた商品を身に着けることでカラダのリラックスとリカバリーをサポートします。</p>
+      <p>※上記文章はファイテン社の技術に対するもので、商品全体に対するものではありません。</p>
+    </div>
+    <div class="concept-img fade"><img src="images/relaxis_re0002-gdbr_1536_2028.png" alt="Rlaxis eyewear Re0002 マットゴールド／ダークブラウン"></div>
+  </div>
+</section>
+
+<!-- ラインナップ -->
+<section class="lineup" id="lineup">
+  <div class="inner">
+    <div class="lineup-head">
+      <p class="sec-label en fade">LINE UP</p>
+      <h2 class="sec-title fade">一日中かけるメガネに、<br>リカバリーサポートを。</h2>
+    </div>
+    <div class="lead fade">
+      <p>Rlaxis eyewearは、クラシックな形を日本製のチタンで仕立てた、アイメガネのオリジナルメガネフレームです。レンズを囲むリム部分には軽いチタンを、耳にかけるテンプルにはしなやかに曲がるβチタンを使っています。鼻あてと耳にかかる部分には、ファイテン社の独自技術「ミクロチタンボール」を採用しました。身に着けることで、お顔回りのリラックスとリカバリーをサポートします。仕事にも休日にも、大人の毎日に寄り添う一本です。</p>
+    </div>
+
+    <div class="lineup-list">
+      <article class="model fade">
+        <div class="model-img model-img--none">画像準備中</div>
+        <div class="model-head"><p class="model-name">Re0001</p><p class="model-spec">オーバル ／ サイズ48</p></div>
+        <h3 class="model-catch">質感を選べる、三つの表情。</h3>
+        <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">丸みのあるオーバル型の、落ち着いた形です。細かな筋目を入れた仕上げや、黒の樹脂七宝をあしらったマットゴールドなど、仕上げの違う3色から選べます。軽やかなバランスで、毎日の服装に自然になじみます。</p></details>
+        <ul class="model-colors">
+          <li>カラー3／ダークブラウン</li>
+          <li>シルバー・筋目仕上げ／ダークグレー</li>
+          <li>マットゴールド・黒の樹脂七宝／ブラック</li>
+        </ul>
+      </article>
+
+      <article class="model fade">
+        <div class="model-img"><img src="images/relaxis_re0002-gdbr_1536_2028.png" alt="Re0002 マットゴールド／ダークブラウン"></div>
+        <div class="model-head"><p class="model-name">Re0002</p><p class="model-spec">ボストン ／ サイズ48</p></div>
+        <h3 class="model-catch">落ち着きのある、大人のゴールド。</h3>
+        <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ゆったりとしたボストン型に、つやを抑えたマットゴールドを合わせました。耳にかかる部分がブラウンのモデルはやわらかく、黒の樹脂七宝のモデルは引き締まった印象です。スーツにも休日の服装にも合わせやすい一本です。</p></details>
+        <ul class="model-colors">
+          <li>カラー2／ダークブラウン</li>
+          <li>マットゴールド／ダークブラウン</li>
+          <li>マットゴールド・黒の樹脂七宝／ブラック</li>
+        </ul>
+      </article>
+
+      <article class="model fade">
+        <div class="model-img model-img--none">画像準備中</div>
+        <div class="model-head"><p class="model-name">Re0003</p><p class="model-spec">ウェリントン ／ サイズ49</p></div>
+        <h3 class="model-catch">モノトーンで、知的に。</h3>
+        <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ブラック、アンティークグレー、筋目仕上げのシルバー。グレー系でまとめた、やわらかなウェリントン型です。すっきりと知的な印象をつくります。しっかりとしたかけ心地を求める方に。</p></details>
+        <ul class="model-colors">
+          <li>カラー1／ブラック</li>
+          <li>アンティークグレー・黒の樹脂七宝／ダークグレー</li>
+          <li>シルバー・筋目仕上げ／ダークグレー</li>
+        </ul>
+      </article>
+
+      <article class="model fade">
+        <div class="model-img"><img src="images/relaxis_re0004-bk_1347_2156.png" alt="Re0004 カラー1／ダークグレー"></div>
+        <div class="model-head"><p class="model-name">Re0004</p><p class="model-spec">ヘキサゴン（六角形） ／ サイズ49</p></div>
+        <h3 class="model-catch">時を重ねたような、深い色味。</h3>
+        <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ヘキサゴン型（六角形）を、やわらかな線で仕上げた形です。アンティークゴールドや筋目仕上げのゴールドに、ブラウンの耳にかかる部分を合わせました。ヴィンテージのような温かみと、チタンならではの軽さを両立しています。</p></details>
+        <ul class="model-colors">
+          <li>カラー1／ダークグレー</li>
+          <li>アンティークゴールド／ダークブラウン</li>
+          <li>ゴールド・筋目仕上げ／ダークブラウン</li>
+        </ul>
+      </article>
+    </div>
+
+    <p class="lineup-note">全品番共通：日本製。レンズを囲むリム部分はチタン、耳にかけるテンプルはβチタン。<br>色（フレームの色／耳にかかる部分の色）</p>
+    <div class="must fade">
+      <p>・本商品はファイテン社の独自技術を取り入れたコラボレーション商品です。</p>
+      <p>・この商品のノーズパッドおよびモダン部分にファイテン社の「ミクロチタンボール」を採用しており、この技術を用いた商品を身に着けることでカラダのリラックスとリカバリーをサポートします。</p>
+      <p>※上記文章はファイテン社の技術に対するもので、商品全体に対するものではありません。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ディテール（提供価値の4つの柱） -->
+<section class="details" id="details">
+  <div class="inner">
+    <div class="details-head">
+      <p class="sec-label en fade">DETAILS</p>
+      <h2 class="sec-title fade"><span class="nb">見た目は、</span><span class="nb">いつもの上品なクラシック。</span><br><span class="nb">その内側に、</span><span class="nb">リカバリーサポートを。</span></h2>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_re0002-gdbk_1536_2730.png" alt="Re0002 マットゴールド・黒の樹脂七宝"></div>
+      <div class="detail-body">
+        <p class="detail-num">01</p>
+        <h3 class="detail-title">クラシックなデザイン</h3>
+        <p class="detail-text">形は、昔から長く愛されてきたクラシックなデザインです。伝統工芸の七宝の風合いを現代の技術で再現した樹脂七宝や、細かな筋目を入れた仕上げ（シャーリング）など、細かな部分まで丁寧に仕上げました。</p>
+      </div>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_detail-side_1536_2034.png" alt="横から見たテンプル"></div>
+      <div class="detail-body">
+        <p class="detail-num">02</p>
+        <h3 class="detail-title"><span class="nb">しなやかに曲がる</span><span class="nb">βチタン</span></h3>
+        <p class="detail-text">レンズを囲むリム部分には軽いチタンを、耳にかけるテンプル部分には、しなやかに曲がるβチタンを使っています。仕事の場にも、休日の服装にも、自然になじみます。</p>
+      </div>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_detail-temple_1536_2034.png" alt="MADE IN JAPANの文字が入った耳にかかる部分"></div>
+      <div class="detail-body">
+        <p class="detail-num">03</p>
+        <h3 class="detail-title"><span class="nb">日本製、</span><span class="nb">毎日の軸になる一本。</span></h3>
+        <p class="detail-text">フレームは日本製です。</p>
+      </div>
+    </div>
+
+    <div class="detail fade">
+      <div class="detail-img"><img src="images/relaxis_detail-tip_1185_2400.png" alt="鼻あてと耳にかかる部分"></div>
+      <div class="detail-body">
+        <p class="detail-num">04</p>
+        <h3 class="detail-title"><span class="nb">かける、</span><span class="nb">リカバリーサポート。</span></h3>
+        <p class="detail-text">メガネが顔に触れるのは、鼻あて（ノーズパッド）と、耳にかかる先端部分の2か所です。この2か所に採用した「ミクロチタンボール」は、世界のトップアスリートからも信頼を集める技術です。身に着けることで、お顔回りのリラックスとリカバリーをサポートします。</p>
+        <div class="must">
+          <p>・本商品はファイテン社の独自技術を取り入れたコラボレーション商品です。</p>
+          <p>・この商品のノーズパッドおよびモダン部分にファイテン社の「ミクロチタンボール」を採用しており、この技術を用いた商品を身に着けることでカラダのリラックスとリカバリーをサポートします。</p>
+          <p>※上記文章はファイテン社の技術に対するもので、商品全体に対するものではありません。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- シーン -->
+<section class="scene">
+  <div class="inner">
+    <div class="scene-head">
+      <p class="sec-label en fade">SCENE</p>
+      <h2 class="sec-title fade">仕事の日も、休日も。</h2>
+    </div>
+    <div class="scene-grid fade">
+      <figure class="scene-a"><img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性"></figure>
+      <figure><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
+      <figure><img src="images/relaxis_scene-woman-glasses_1408_768.png" alt="Re0002をかけて窓辺で微笑む女性"></figure>
+    </div>
+    <p class="scene-caption fade">いつもの自分のままで。</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="shop">
+  <div class="inner">
+    <h2 class="cta-title fade">日常の軸に、<br>リカバリーサポート。</h2>
+    <p class="cta-text fade">店頭では、アイメガネのスタッフがお顔に合わせて、<br>かけ具合を丁寧に調整いたします。</p>
+    <div class="cta-btns fade">
+      <a class="btn btn--main" href="#">お近くの店舗をさがす</a>
+      <a class="btn btn--sub" href="#">来店予約をする</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <img src="images/logo-aimegane.png" alt="アイメガネ">
+  <small>© AIMEGANE</small>
+</footer>
+
+<script>
+// FVの切りかえ（6秒ごと）
+(function(){
+  var slides = document.querySelectorAll('.fv-slide');
+  var i = 0;
+  setInterval(function(){
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }, 6000);
+})();
+
+// 品番の紹介文：PCは開いたまま、スマホはたたむ
+(function(){
+  if (window.matchMedia('(max-width:768px)').matches) {
+    document.querySelectorAll('.model-more').forEach(function(d){ d.removeAttribute('open'); });
+  }
+})();
+
+// ふわっと表示
+(function(){
+  var els = document.querySelectorAll('.fade');
+  if (!('IntersectionObserver' in window)) { els.forEach(function(e){ e.classList.add('is-show'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if (en.isIntersecting) { en.target.classList.add('is-show'); io.unobserve(en.target); }
+    });
+  }, { threshold: .15 });
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
