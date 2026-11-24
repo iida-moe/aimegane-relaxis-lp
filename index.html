@@ -288,7 +288,23 @@ h2,h3{text-wrap:balance}
 .detail-text{margin-top:16px}/* 11/24 見出しを読みやすく：細すぎ・字間広すぎをやめる／Detailsは2段（小さい前置き＋見出し） */
 .sec-title,.concept-catch,.cta-title,.scene-caption,.fv-catch{font-weight:400;letter-spacing:.1em}
 .sec-lead{margin-top:14px;font-size:14px;color:var(--ink-sub);letter-spacing:.08em}
-.sec-lead + .sec-title{margin-top:6px}</style>
+.sec-lead + .sec-title{margin-top:6px}/* 11/24 04は鼻あて（横長）＋耳にかかる部分（縦長・高さ上限なし）の2枚 */
+.detail-img--wide img,.detail-img--tall img{max-height:none}
+.detail-img--tall{margin-top:4px}
+/* 11/24 FVの透明感に合わせる：すっきりした寒色寄りの白・文字は少し大きく濃く・メニューは線だけ */
+:root{--bg-right:#F5F7F8;--bg-sub:#F3F5F6;--line:#E3E6E8;--ink:#2F3337;--ink-sub:#5C6268;--sage:#2F3337;--sage-soft:#C3C8CC}
+.lead,.lead p,.detail-text,.cta-text{font-size:15px;line-height:2.1}
+.model-text{font-size:14px}
+.menu a{height:auto;padding:16px 4px;margin:0;background:none;border-radius:0;box-shadow:none;border-bottom:1px solid var(--line)}
+.menu a:first-child{border-top:1px solid var(--line)}
+.menu a:hover{box-shadow:none;padding-left:10px}
+.menu .m-en{font-weight:400;font-size:13px;letter-spacing:.16em}
+.side-right-btn,.btn--main{background:var(--ink);border-radius:0;letter-spacing:.16em}
+.btn--sub{border-color:var(--ink);color:var(--ink);border-radius:0}
+.tabs a{font-weight:400;font-size:13px;letter-spacing:.12em;border-bottom-width:1px}
+.sec-title,.concept-catch,.cta-title{letter-spacing:.12em}
+.must{background:var(--bg-sub)}.model-img,.model-img--none,.must,.concept-img,.scene-list figure{border-radius:0}
+</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -463,7 +479,8 @@ h2,h3{text-wrap:balance}
     </div>
 
     <div class="detail fade">
-      <div class="detail-img"><img src="images/relaxis_detail-tip_1185_2400.png" alt="鼻あてと耳にかかる部分"></div>
+      <div class="detail-img detail-img--wide"><img src="images/relaxis_detail-pad_2730_1536.jpeg" alt="ファイテンのマークが入った鼻あて"></div>
+      <div class="detail-img detail-img--tall"><img src="images/relaxis_detail-tip_1536_2730.png" alt="ファイテンのロゴが入った耳にかかる部分"></div>
       <p class="detail-num">04</p>
       <h3 class="detail-title"><span class="nb">かける、</span><span class="nb">リカバリーサポート。</span></h3>
       <p class="detail-text">メガネが顔に触れるのは、鼻あて（ノーズパッド）と、耳にかかる先端部分の2か所です。この2か所に採用した「ミクロチタンボール」は、世界のトップアスリートからも信頼を集める技術です。身に着けることで、お顔回りのリラックスとリカバリーをサポートします。</p>
