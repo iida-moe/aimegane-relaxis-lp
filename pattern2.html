@@ -264,6 +264,22 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
 .model-text{font-size:14px}
 @media (max-width:768px){.lead,.detail-text,.cta-text{font-size:15px}}
 @media (max-width:768px){.concept .concept-body .lead{text-align:center}}
+/* 11/24 カラー表示：番号＋フレームの色（大）＋耳にかかる部分の色（小）・PCは下にそろえる */
+.model{display:flex;flex-direction:column}
+.model-colors{margin-top:auto;padding-top:20px;font-size:13px;line-height:1.6}
+.colors-label{display:flex;flex-wrap:wrap;column-gap:12px;row-gap:2px;align-items:baseline;padding-bottom:8px;border-bottom:1px solid var(--ink-sub);color:var(--ink-sub)}
+.colors-label .en{font-family:"Cormorant Garamond",serif;font-size:14px;letter-spacing:.2em;color:var(--ink)}
+.colors-label small{font-size:10.5px;letter-spacing:.04em}
+.model-colors ul{margin:0;padding:0}
+.model-colors li{list-style:none;display:grid;grid-template-columns:28px 1fr;align-items:baseline;padding:10px 0;border-top:1px solid var(--line);gap:0}
+.model-colors li:first-child{border-top:none}
+.model-colors .c-no{font-family:"Cormorant Garamond",serif;font-variant-numeric:lining-nums;font-size:15px;color:var(--ink-sub)}
+.model-colors .c-frame{color:var(--ink);letter-spacing:.04em}
+.model-colors .c-tip{grid-column:2;font-size:11.5px;color:var(--ink-sub);letter-spacing:.04em}
+/* パターン1の古い指定を打ち消す */
+.model-colors .c-frame,.model-colors .c-tip{font-family:"Zen Kaku Gothic New",sans-serif}
+.model-colors .c-frame{font-size:13px}
+.model-colors .c-tip::before{content:"";display:inline-block;width:10px;height:1px;background:currentColor;vertical-align:middle;margin-right:6px}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -370,11 +386,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0001</p><p class="model-spec">オーバル ／ サイズ48</p></div>
         <h3 class="model-catch">質感を選べる、三つの表情。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">丸みのあるオーバル型の、落ち着いた形です。細かな筋目を入れた仕上げや、黒の樹脂七宝をあしらったマットゴールドなど、仕上げの違う3色から選べます。軽やかなバランスで、毎日の服装に自然になじみます。</p></details>
-        <ul class="model-colors">
-          <li>カラー3／ダークブラウン</li>
-          <li>シルバー・筋目仕上げ／ダークグレー</li>
-          <li>マットゴールド・黒の樹脂七宝／ブラック</li>
-        </ul>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー3</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">02</span><span class="c-frame">シルバー・筋目仕上げ</span><span class="c-tip">ダークグレー</span></li><li><span class="c-no">03</span><span class="c-frame">マットゴールド・黒の樹脂七宝</span><span class="c-tip">ブラック</span></li></ul></div>
       </article>
 
       <article class="model fade">
@@ -382,11 +394,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0002</p><p class="model-spec">ボストン ／ サイズ48</p></div>
         <h3 class="model-catch">落ち着きのある、大人のゴールド。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ゆったりとしたボストン型に、つやを抑えたマットゴールドを合わせました。耳にかかる部分がブラウンのモデルはやわらかく、黒の樹脂七宝のモデルは引き締まった印象です。スーツにも休日の服装にも合わせやすい一本です。</p></details>
-        <ul class="model-colors">
-          <li>カラー2／ダークブラウン</li>
-          <li>マットゴールド／ダークブラウン</li>
-          <li>マットゴールド・黒の樹脂七宝／ブラック</li>
-        </ul>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー2</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">02</span><span class="c-frame">マットゴールド</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">03</span><span class="c-frame">マットゴールド・黒の樹脂七宝</span><span class="c-tip">ブラック</span></li></ul></div>
       </article>
 
       <article class="model fade">
@@ -394,11 +402,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0003</p><p class="model-spec">ウェリントン ／ サイズ49</p></div>
         <h3 class="model-catch">モノトーンで、知的に。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ブラック、アンティークグレー、筋目仕上げのシルバー。グレー系でまとめた、やわらかなウェリントン型です。すっきりと知的な印象をつくります。しっかりとしたかけ心地を求める方に。</p></details>
-        <ul class="model-colors">
-          <li>カラー1／ブラック</li>
-          <li>アンティークグレー・黒の樹脂七宝／ダークグレー</li>
-          <li>シルバー・筋目仕上げ／ダークグレー</li>
-        </ul>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー1</span><span class="c-tip">ブラック</span></li><li><span class="c-no">02</span><span class="c-frame">アンティークグレー・黒の樹脂七宝</span><span class="c-tip">ダークグレー</span></li><li><span class="c-no">03</span><span class="c-frame">シルバー・筋目仕上げ</span><span class="c-tip">ダークグレー</span></li></ul></div>
       </article>
 
       <article class="model fade">
@@ -406,15 +410,11 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0004</p><p class="model-spec">ヘキサゴン（六角形） ／ サイズ49</p></div>
         <h3 class="model-catch">時を重ねたような、深い色味。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ヘキサゴン型（六角形）を、やわらかな線で仕上げた形です。アンティークゴールドや筋目仕上げのゴールドに、ブラウンの耳にかかる部分を合わせました。ヴィンテージのような温かみと、チタンならではの軽さを両立しています。</p></details>
-        <ul class="model-colors">
-          <li>カラー1／ダークグレー</li>
-          <li>アンティークゴールド／ダークブラウン</li>
-          <li>ゴールド・筋目仕上げ／ダークブラウン</li>
-        </ul>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー1</span><span class="c-tip">ダークグレー</span></li><li><span class="c-no">02</span><span class="c-frame">アンティークゴールド</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">03</span><span class="c-frame">ゴールド・筋目仕上げ</span><span class="c-tip">ダークブラウン</span></li></ul></div>
       </article>
     </div>
 
-    <p class="lineup-note">全品番共通：日本製。レンズを囲むリム部分はチタン、耳にかけるテンプルはβチタン。<br>色（フレームの色／耳にかかる部分の色）</p>
+    <p class="lineup-note">全品番共通：日本製。レンズを囲むリム部分はチタン、耳にかけるテンプルはβチタン。</p>
     <div class="must fade">
       <p>・本商品はファイテン社の独自技術を取り入れたコラボレーション商品です。</p>
       <p>・この商品のノーズパッドおよびモダン部分にファイテン社の「ミクロチタンボール」を採用しており、この技術を用いた商品を身に着けることでカラダのリラックスとリカバリーをサポートします。</p>
