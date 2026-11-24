@@ -311,7 +311,19 @@ h2,h3{text-wrap:balance}
 .sec{padding:56px 24px 72px}
 .sec-head::before{content:"";display:block;width:1px;height:40px;background:#C9CED2;margin:0 auto 18px}
 .model{background:#F5F7F8}
-.model-img{background:#fff}</style>
+.model-img{background:#fff}/* 11/24 人物をもっと出す：Concept＝男性／Line upのあと＝本を読む女性／CTA＝女性のアップ */
+.photo-bleed{margin:40px -24px 0;overflow:hidden}
+.photo-bleed img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.photo-bleed--man img{object-position:72% center}
+.photo-bleed--woman img{object-position:44% center}
+.cta .photo-bleed{margin:-56px -24px 0}
+.cta-lead{margin:36px 0 28px;font-size:15px;color:var(--ink-sub);letter-spacing:.16em}
+.band{position:relative;background:#fff}
+.band img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:28% center}
+.band-copy{padding:28px 24px 8px;text-align:center;font-size:17px;letter-spacing:.16em;color:var(--ink)}
+.model-head{flex-wrap:wrap;column-gap:12px}
+.model-spec{white-space:nowrap}
+</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -366,7 +378,6 @@ h2,h3{text-wrap:balance}
       <a href="#concept"><span class="m-en">Concept</span></a>
       <a href="#lineup"><span class="m-en">Line up</span></a>
       <a href="#details"><span class="m-en">Details</span></a>
-      <a href="#scene"><span class="m-en">Scene</span></a>
       <a href="#shop"><span class="m-en">Shop</span></a>
     </nav>
     <div class="side-right-sub">
@@ -407,7 +418,7 @@ h2,h3{text-wrap:balance}
       <p><span class="nb">朝から夜まで、</span><span class="nb">毎日かけているメガネ。</span><br><span class="nb">その毎日の軸に、</span><span class="nb">リラックスとリカバリーという</span><span class="nb">考え方を取り入れたい。</span></p>
       <p><span class="nb">仕事の日も、休日も。</span><span class="nb">いつもの自分のままで。</span></p>
     </div>
-    <div class="concept-img fade"><img src="images/relaxis_re0004-bk_1347_2156.png" alt="Rlaxis eyewear Re0004 カラー1／ダークグレー"></div>
+    <figure class="photo-bleed photo-bleed--man fade"><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
   </section>
 
   <!-- ラインナップ -->
@@ -456,6 +467,12 @@ h2,h3{text-wrap:balance}
     </div>
   </section>
 
+  <!-- ひと息（写真＋言葉） -->
+  <div class="band">
+    <img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性">
+    <p class="band-copy fade">仕事の日も、休日も。</p>
+  </div>
+
   <!-- ディテール（提供価値の4つの柱） -->
   <section class="sec details" id="details">
     <div class="sec-head">
@@ -498,24 +515,11 @@ h2,h3{text-wrap:balance}
     </div>
   </section>
 
-  <!-- シーン -->
-  <section class="sec scene" id="scene">
-    <div class="sec-head">
-      <p class="sec-label en fade">Scene</p>
-      <h2 class="sec-title fade">仕事の日も、休日も。</h2>
-    </div>
-    <div class="scene-list fade">
-      <figure class="scene-a"><img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性"></figure>
-      <div class="scene-row">
-        <figure class="s-man"><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
-        <figure class="s-woman"><img src="images/relaxis_scene-woman_1408_768.png" alt="窓辺でほほえむ女性"></figure>
-      </div>
-    </div>
-    <p class="scene-caption fade">いつもの自分のままで。</p>
-  </section>
 
   <!-- CTA -->
   <section class="sec cta" id="shop">
+    <figure class="photo-bleed photo-bleed--woman fade"><img src="images/relaxis_scene-woman_1408_768.png" alt="窓辺でほほえむ女性"></figure>
+    <p class="cta-lead fade">いつもの自分のままで。</p>
     <h2 class="cta-title fade">日常の軸に、<br>リカバリーサポート。</h2>
     <p class="cta-text fade">店頭では、アイメガネのスタッフが<br>お顔に合わせて、かけ具合を<br>丁寧に調整いたします。</p>
     <div class="cta-btns fade">
