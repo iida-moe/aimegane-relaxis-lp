@@ -285,7 +285,10 @@ h2,h3{text-wrap:balance}
 .detail-img--photo img{max-height:none;aspect-ratio:4/5;object-fit:cover;object-position:40% center}
 .detail-num{margin-top:28px;font-size:32px}
 .detail-title{margin-top:10px;font-size:20px}
-.detail-text{margin-top:16px}</style>
+.detail-text{margin-top:16px}/* 11/24 見出しを読みやすく：細すぎ・字間広すぎをやめる／Detailsは2段（小さい前置き＋見出し） */
+.sec-title,.concept-catch,.cta-title,.scene-caption,.fv-catch{font-weight:400;letter-spacing:.1em}
+.sec-lead{margin-top:14px;font-size:14px;color:var(--ink-sub);letter-spacing:.08em}
+.sec-lead + .sec-title{margin-top:6px}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -434,7 +437,8 @@ h2,h3{text-wrap:balance}
   <section class="sec details" id="details">
     <div class="sec-head">
       <p class="sec-label en fade">Details</p>
-      <h2 class="sec-title fade"><span class="nb">見た目は、</span><span class="nb">いつもの上品なクラシック。</span><br><span class="nb">その内側に、</span><span class="nb">リカバリーサポートを。</span></h2>
+      <p class="sec-lead fade">見た目は、いつもの上品なクラシック。</p>
+      <h2 class="sec-title fade">その内側に、<br>リカバリーサポートを。</h2>
     </div>
 
     <div class="detail fade">
