@@ -233,7 +233,23 @@ section{padding:120px 24px}
 h1,h2,h3,.fv-catch,.concept-name,.scene-caption,.cta-text{word-break:auto-phrase}
 h2,h3,.fv-catch,.scene-caption{text-wrap:balance}
 .fv-brand{font-weight:400}
-.sec-label{font-size:14px}</style>
+.sec-label{font-size:14px}/* 11/24 コンセプト：PCは左に人物・右に文章（左ぞろえ）／スマホは写真が上 */
+.concept-row{display:grid;grid-template-columns:1fr 1.15fr;gap:80px;align-items:center;text-align:left}
+.concept-photo{aspect-ratio:4/5;overflow:hidden;background:var(--white)}
+.concept-photo img{width:100%;height:100%;object-fit:cover;object-position:46% center}
+.concept-body .concept-catch{font-size:24px}
+.concept-body .lead,.concept .concept-body .lead{margin:36px 0 0;max-width:none;text-align:left}
+.concept-body .concept-name{margin-top:36px;text-align:left}
+.concept .must{margin-top:72px}
+@media (max-width:768px){
+  .concept-row{grid-template-columns:1fr;gap:40px}
+  .concept-photo{aspect-ratio:4/3;margin:0 -28px}
+  .concept-body{text-align:center}
+  .concept-body .concept-catch{font-size:19px}
+  .concept-body .concept-name{text-align:center}
+}
+/* 薄い紙のざらつき（近づくとわかるくらい） */
+section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
@@ -307,6 +323,9 @@ h2,h3,.fv-catch,.scene-caption{text-wrap:balance}
 <!-- コンセプト（ブランドステートメント） -->
 <section class="concept" id="concept">
   <div class="inner">
+   <div class="concept-row">
+    <figure class="concept-photo fade"><img src="images/relaxis_scene-woman-glasses_1408_768.png" alt="Re0002をかけて窓辺で微笑む女性"></figure>
+    <div class="concept-body">
     <p class="sec-label en fade">CONCEPT</p>
     <h2 class="concept-catch fade"><span class="nb">一日中かけるメガネだから、</span><br><span class="nb">リラックスとリカバリーの</span><span class="nb">ことも考えたい。</span></h2>
     <div class="lead fade">
@@ -316,6 +335,8 @@ h2,h3,.fv-catch,.scene-caption{text-wrap:balance}
       <p>仕事の日も、休日も。いつもの自分のままで。</p>
     </div>
     <p class="concept-name fade"><span class="nb">Rlaxis（リラクシス）は、</span><span class="nb">「Relax（リラックス）」と「Axis（軸）」を</span><span class="nb">合わせた名前です。</span></p>
+    </div>
+   </div>
     <div class="must fade">
       <p>・本商品はファイテン社の独自技術を取り入れたコラボレーション商品です。</p>
       <p>・この商品のノーズパッドおよびモダン部分にファイテン社の「ミクロチタンボール」を採用しており、この技術を用いた商品を身に着けることでカラダのリラックスとリカバリーをサポートします。</p>
@@ -456,7 +477,7 @@ h2,h3,.fv-catch,.scene-caption{text-wrap:balance}
     <div class="scene-grid fade">
       <figure class="scene-a"><img src="images/relaxis_scene-book_1408_768.png" alt="本を読む女性"></figure>
       <figure><img src="images/relaxis_scene-man_1408_768.png" alt="窓の外を見る男性"></figure>
-      <figure><img src="images/relaxis_scene-woman-glasses_1408_768.png" alt="Re0002をかけて窓辺で微笑む女性"></figure>
+      <figure><img src="images/relaxis_scene-woman_1408_768.png" alt="窓辺でほほえむ女性"></figure>
     </div>
     <p class="scene-caption fade">いつもの自分のままで。</p>
   </div>
