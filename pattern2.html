@@ -280,6 +280,20 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
 .model-colors .c-frame,.model-colors .c-tip{font-family:"Zen Kaku Gothic New",sans-serif}
 .model-colors .c-frame{font-size:13px}
 .model-colors .c-tip::before{content:"";display:inline-block;width:10px;height:1px;background:currentColor;vertical-align:middle;margin-right:6px}
+/* 11/24 カラーは丸いボタン（左上＝フレーム／右下＝耳にかかる部分）・押すと下に色名 */
+.swatches{display:flex;gap:18px;margin-top:14px}
+.sw{position:relative;width:34px;height:34px;border-radius:50%;border:none;padding:0;cursor:pointer;
+  background:linear-gradient(135deg,transparent 50%,var(--t) 50%),var(--f);
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);transition:box-shadow .2s}
+.sw::before{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid transparent;transition:border-color .2s}
+.sw.is-active::before{border-color:var(--ink)}
+.sw--tbd{--f:repeating-linear-gradient(45deg,#EEEBE5 0 3px,#E0DCD4 3px 6px)}
+.sw--shippo::after{content:"";position:absolute;left:7px;top:7px;width:9px;height:9px;border-radius:50%;background:#1E1E1E}
+.sw-no{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);font-family:"Cormorant Garamond",serif;font-variant-numeric:lining-nums;font-size:12px;color:var(--ink-sub);line-height:1}
+.sw-name{margin-top:30px;min-height:3.4em;font-size:13px;line-height:1.7}
+.sw-name .c-frame{display:block;color:var(--ink);font-family:"Zen Kaku Gothic New",sans-serif;letter-spacing:.04em}
+.sw-name .c-tip{display:block;font-size:11.5px;color:var(--ink-sub);font-family:"Zen Kaku Gothic New",sans-serif;letter-spacing:.04em}
+.sw-name .c-tip::before{content:"";display:inline-block;width:10px;height:1px;background:currentColor;vertical-align:middle;margin-right:6px}
 </style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -386,7 +400,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0001</p><p class="model-spec">オーバル ／ サイズ48</p></div>
         <h3 class="model-catch">質感を選べる、三つの表情。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">丸みのあるオーバル型の、落ち着いた形です。細かな筋目を入れた仕上げや、黒の樹脂七宝をあしらったマットゴールドなど、仕上げの違う3色から選べます。軽やかなバランスで、毎日の服装に自然になじみます。</p></details>
-        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー3</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">02</span><span class="c-frame">シルバー・筋目仕上げ</span><span class="c-tip">ダークグレー</span></li><li><span class="c-no">03</span><span class="c-frame">マットゴールド・黒の樹脂七宝</span><span class="c-tip">ブラック</span></li></ul></div>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><div class="swatches"><button type="button" class="sw is-active sw--tbd" style="--t:#4A3226;" data-frame="カラー3" data-tip="ダークブラウン" aria-label="01 カラー3／ダークブラウン" aria-pressed="true"><span class="sw-no">01</span></button><button type="button" class="sw" style="--t:#4B4D50;--f:repeating-linear-gradient(90deg,#D2D4D6 0 2px,#BFC2C5 2px 3px);" data-frame="シルバー・筋目仕上げ" data-tip="ダークグレー" aria-label="02 シルバー・筋目仕上げ／ダークグレー" aria-pressed="false"><span class="sw-no">02</span></button><button type="button" class="sw sw--shippo" style="--t:#1E1E1E;--f:#C2A878;" data-frame="マットゴールド・黒の樹脂七宝" data-tip="ブラック" aria-label="03 マットゴールド・黒の樹脂七宝／ブラック" aria-pressed="false"><span class="sw-no">03</span></button></div><p class="sw-name"><span class="c-frame">カラー3</span><span class="c-tip">ダークブラウン</span></p></div>
       </article>
 
       <article class="model fade">
@@ -394,7 +408,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0002</p><p class="model-spec">ボストン ／ サイズ48</p></div>
         <h3 class="model-catch">落ち着きのある、大人のゴールド。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ゆったりとしたボストン型に、つやを抑えたマットゴールドを合わせました。耳にかかる部分がブラウンのモデルはやわらかく、黒の樹脂七宝のモデルは引き締まった印象です。スーツにも休日の服装にも合わせやすい一本です。</p></details>
-        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー2</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">02</span><span class="c-frame">マットゴールド</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">03</span><span class="c-frame">マットゴールド・黒の樹脂七宝</span><span class="c-tip">ブラック</span></li></ul></div>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><div class="swatches"><button type="button" class="sw is-active sw--tbd" style="--t:#4A3226;" data-frame="カラー2" data-tip="ダークブラウン" aria-label="01 カラー2／ダークブラウン" aria-pressed="true"><span class="sw-no">01</span></button><button type="button" class="sw" style="--t:#4A3226;--f:#C2A878;" data-frame="マットゴールド" data-tip="ダークブラウン" aria-label="02 マットゴールド／ダークブラウン" aria-pressed="false"><span class="sw-no">02</span></button><button type="button" class="sw sw--shippo" style="--t:#1E1E1E;--f:#C2A878;" data-frame="マットゴールド・黒の樹脂七宝" data-tip="ブラック" aria-label="03 マットゴールド・黒の樹脂七宝／ブラック" aria-pressed="false"><span class="sw-no">03</span></button></div><p class="sw-name"><span class="c-frame">カラー2</span><span class="c-tip">ダークブラウン</span></p></div>
       </article>
 
       <article class="model fade">
@@ -402,7 +416,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0003</p><p class="model-spec">ウェリントン ／ サイズ49</p></div>
         <h3 class="model-catch">モノトーンで、知的に。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ブラック、アンティークグレー、筋目仕上げのシルバー。グレー系でまとめた、やわらかなウェリントン型です。すっきりと知的な印象をつくります。しっかりとしたかけ心地を求める方に。</p></details>
-        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー1</span><span class="c-tip">ブラック</span></li><li><span class="c-no">02</span><span class="c-frame">アンティークグレー・黒の樹脂七宝</span><span class="c-tip">ダークグレー</span></li><li><span class="c-no">03</span><span class="c-frame">シルバー・筋目仕上げ</span><span class="c-tip">ダークグレー</span></li></ul></div>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><div class="swatches"><button type="button" class="sw is-active sw--tbd" style="--t:#1E1E1E;" data-frame="カラー1" data-tip="ブラック" aria-label="01 カラー1／ブラック" aria-pressed="true"><span class="sw-no">01</span></button><button type="button" class="sw sw--shippo" style="--t:#4B4D50;--f:#8C8A84;" data-frame="アンティークグレー・黒の樹脂七宝" data-tip="ダークグレー" aria-label="02 アンティークグレー・黒の樹脂七宝／ダークグレー" aria-pressed="false"><span class="sw-no">02</span></button><button type="button" class="sw" style="--t:#4B4D50;--f:repeating-linear-gradient(90deg,#D2D4D6 0 2px,#BFC2C5 2px 3px);" data-frame="シルバー・筋目仕上げ" data-tip="ダークグレー" aria-label="03 シルバー・筋目仕上げ／ダークグレー" aria-pressed="false"><span class="sw-no">03</span></button></div><p class="sw-name"><span class="c-frame">カラー1</span><span class="c-tip">ブラック</span></p></div>
       </article>
 
       <article class="model fade">
@@ -410,7 +424,7 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
         <div class="model-head"><p class="model-name">Re0004</p><p class="model-spec">ヘキサゴン（六角形） ／ サイズ49</p></div>
         <h3 class="model-catch">時を重ねたような、深い色味。</h3>
         <details class="model-more" open><summary>くわしく見る</summary><p class="model-text">ヘキサゴン型（六角形）を、やわらかな線で仕上げた形です。アンティークゴールドや筋目仕上げのゴールドに、ブラウンの耳にかかる部分を合わせました。ヴィンテージのような温かみと、チタンならではの軽さを両立しています。</p></details>
-        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><ul><li><span class="c-no">01</span><span class="c-frame">カラー1</span><span class="c-tip">ダークグレー</span></li><li><span class="c-no">02</span><span class="c-frame">アンティークゴールド</span><span class="c-tip">ダークブラウン</span></li><li><span class="c-no">03</span><span class="c-frame">ゴールド・筋目仕上げ</span><span class="c-tip">ダークブラウン</span></li></ul></div>
+        <div class="model-colors"><p class="colors-label"><span class="en">COLOR</span><small>フレームの色／耳にかかる部分の色</small></p><div class="swatches"><button type="button" class="sw is-active sw--tbd" style="--t:#4B4D50;" data-frame="カラー1" data-tip="ダークグレー" aria-label="01 カラー1／ダークグレー" aria-pressed="true"><span class="sw-no">01</span></button><button type="button" class="sw" style="--t:#4A3226;--f:#A68A5B;" data-frame="アンティークゴールド" data-tip="ダークブラウン" aria-label="02 アンティークゴールド／ダークブラウン" aria-pressed="false"><span class="sw-no">02</span></button><button type="button" class="sw" style="--t:#4A3226;--f:repeating-linear-gradient(90deg,#D6B878 0 2px,#C4A564 2px 3px);" data-frame="ゴールド・筋目仕上げ" data-tip="ダークブラウン" aria-label="03 ゴールド・筋目仕上げ／ダークブラウン" aria-pressed="false"><span class="sw-no">03</span></button></div><p class="sw-name"><span class="c-frame">カラー1</span><span class="c-tip">ダークグレー</span></p></div>
       </article>
     </div>
 
@@ -537,6 +551,16 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
   }, { threshold: .15 });
   els.forEach(function(e){ io.observe(e); });
 })();
+</script>
+<script>
+// カラーボタン：押した色の名前を下に出す
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('.sw'); if (!b) return;
+  var box = b.closest('.model-colors');
+  box.querySelectorAll('.sw').forEach(function (x) { x.classList.toggle('is-active', x === b); x.setAttribute('aria-pressed', x === b); });
+  box.querySelector('.sw-name .c-frame').textContent = b.dataset.frame;
+  box.querySelector('.sw-name .c-tip').textContent = b.dataset.tip;
+});
 </script>
 </body>
 </html>
