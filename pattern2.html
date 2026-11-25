@@ -320,7 +320,16 @@ section,.footer{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://ww
   .cta-row .cta-btns{justify-content:center}
   .cta-row .btn{min-width:0}
 }
-</style>
+/* 11/25 ベージュ→爽やかでクリアな白（FVの透明感に合わせる）・紙のざらつきは外す */
+:root{--bg:#FFFFFF;--bg-sub:#F2F5F7;--white:#FFFFFF;--ink:#2F3337;--ink-sub:#5C6268;--line:#DEE3E7;--green:#2F3337}
+section,.footer{background-image:none}
+.header{background:rgba(255,255,255,.88)}
+.concept,.details{background:#fff}
+.lineup{background:var(--bg-sub)}
+.model-img{background:#fff}
+.must{background:var(--bg-sub)}
+.lineup .must{background:#fff}
+.band-copy{color:var(--ink)}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
