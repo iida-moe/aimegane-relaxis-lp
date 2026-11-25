@@ -329,7 +329,16 @@ section,.footer{background-image:none}
 .model-img{background:#fff}
 .must{background:var(--bg-sub)}
 .lineup .must{background:#fff}
-.band-copy{color:var(--ink)}</style>
+.band-copy{color:var(--ink)}/* 11/25 写真をなじませる：Concept・CTAの写真は文章側と下を白に溶かす（スマホは下だけ） */
+.concept-photo,.cta-photo{background:none}
+.concept-photo img,.cta-photo img{
+  -webkit-mask-image:linear-gradient(to left,transparent 0%,#000 35%),linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);
+  -webkit-mask-composite:source-in;
+  mask-image:linear-gradient(to left,transparent 0%,#000 35%),linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);
+  mask-composite:intersect}
+@media (max-width:768px){
+  .concept-photo img,.cta-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%)}
+}</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
