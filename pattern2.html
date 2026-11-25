@@ -338,7 +338,19 @@ section,.footer{background-image:none}
   mask-composite:intersect}
 @media (max-width:768px){
   .concept-photo img,.cta-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%);mask-image:linear-gradient(to bottom,#000 0%,#000 75%,transparent 100%)}
-}</style>
+}/* 11/25 背景：グラデ＋大きなうすい英字（文字重ね） */
+.concept,.lineup,.details,.cta{position:relative;overflow:hidden}
+.concept > .inner,.lineup > .inner,.details > .inner,.cta > .inner{position:relative;z-index:1}
+.concept::after,.lineup::after,.details::after{position:absolute;top:56px;z-index:0;white-space:nowrap;pointer-events:none;
+  font-family:"Cormorant Garamond",serif;font-weight:300;font-size:clamp(96px,13vw,190px);letter-spacing:.02em;line-height:1;color:#EAF0F4}
+.concept::after{content:"Relaxis";right:-1vw}
+.lineup::after{content:"Line up";left:2vw;color:#fff}
+.details::after{content:"Details";right:-1vw}
+.lineup{background:linear-gradient(to bottom,#fff 0,#EEF4F8 280px,#EEF4F8 calc(100% - 220px),#fff 100%)}
+.lineup .model-img{background:#fff}
+.cta{background:linear-gradient(to bottom,#fff 0,#fff 50%,#EEF4F8 100%)}
+@media (max-width:768px){.concept::after,.lineup::after,.details::after{font-size:76px;top:40px}}.lineup::after{color:#E3ECF2}
+</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }

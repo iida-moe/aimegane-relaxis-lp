@@ -337,7 +337,22 @@ h2,h3{text-wrap:balance}
   -webkit-mask-image:linear-gradient(to left,transparent 0%,#000 40%),linear-gradient(to bottom,rgba(0,0,0,.6) 0%,#000 8%,#000 78%,transparent 100%);
   -webkit-mask-composite:source-in;
   mask-image:linear-gradient(to left,transparent 0%,#000 40%),linear-gradient(to bottom,rgba(0,0,0,.6) 0%,#000 8%,#000 78%,transparent 100%);
-  mask-composite:intersect}</style>
+  mask-composite:intersect}/* 11/25 背景：グラデ＋大きなうすい英字（文字重ね） */
+.sec{position:relative}
+.sec > *{position:relative;z-index:1}
+.sec::after{position:absolute;left:0;right:0;top:72px;z-index:0;text-align:center;white-space:nowrap;pointer-events:none;
+  font-family:"Montserrat",sans-serif;font-weight:300;font-size:76px;letter-spacing:.04em;line-height:1;color:#EAF0F4}
+#concept::after{content:"Relaxis"}
+#lineup::after{content:"Line up"}
+#details::after{content:"Details"}
+.lineup{background:linear-gradient(to bottom,#fff 0,#EEF4F8 260px,#EEF4F8 calc(100% - 200px),#fff 100%)}
+.lineup::after{color:#fff}
+.lineup .model{background:#fff}
+.lineup .model-img{background:#fff}
+.cta{background:linear-gradient(to bottom,#fff 0,#fff 55%,#EEF4F8 100%)}#concept .sec-head::before,#lineup .sec-head::before,#details .sec-head::before{display:none}
+.sec::after{top:34px}
+.lineup::after{color:#E3ECF2}
+</style>
 <style>
   .preview-gate { position: fixed; inset: 0; z-index: 9999; background: #F3EEE6; display: flex; align-items: center; justify-content: center; padding: 20px; }
   .preview-gate-box { background: #FFFDF9; border-radius: 14px; box-shadow: 0 4px 24px rgba(120,100,70,.10); padding: 36px 28px; width: 100%; max-width: 340px; text-align: center; font-family: "Zen Maru Gothic", sans-serif; }
